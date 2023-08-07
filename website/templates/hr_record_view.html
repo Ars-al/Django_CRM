@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="col-md-6 offset-md-3">
+    
+
+    <div class="card mt-5">
+        <h6 class="card-header fw-bold text-center">
+            HR ID: 
+            {{ hr_record_view.id }}
+        </h6>
+        <div class="card-body">
+            <h3 class="card-title fw-bold mb-3">
+                {{ hr_record_view.first_name }}
+                {{ hr_record_view.last_name }}
+            </h3>
+            <p class="card-text"><strong>Email Address:</strong> {{ hr_record_view.email }} </p>
+            <p class="card-text"><strong>Phone Number:</strong> {{ hr_record_view.phone }}</p>
+            <p class="card-text"><strong>Address:</strong> {{ hr_record_view.address }}</p>
+            <p class="card-text"><strong>City:</strong> {{ hr_record_view.city }}</p>
+            <p class="card-text"><strong>State:</strong> {{ hr_record_view.state }}</p>
+            <p class="card-text"><strong>Zipcode:</strong> {{ hr_record_view.zipcode }}</p>
+            <p class="card-text"><strong>Created At:</strong> {{ hr_record_view.created_at }}</p>
+        </div>
+    </div>
+
+    <a href="{% url 'hr_panel' %}" class="btn btn-secondary mt-3">Back</a>
+    <a href="{% url 'delete_hr_record' hr_record_view.id %}" class="btn btn-danger mt-3">Delete</a>
+    <a href="{% url 'update_hr_record' hr_record_view.id %}" class="btn btn-success mt-3">Update Record</a>
+
+</div>
+
+{% endblock  %}
